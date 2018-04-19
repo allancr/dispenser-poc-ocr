@@ -1,0 +1,8 @@
+{
+  "name": "SES-DF - PoC de proposta de solução para leitura OCR de documentos",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
