@@ -1,5 +1,5 @@
-# Dispenser - PoC - Leitor QR code
-Projeto para experimentar e demonstrar a leitura de códigos QR com projeto híbrido para smartphones com Ionic 3.
+# Dispenser - PoC - Processador OCR
+Projeto para experimentar e demonstrar o processamento OCR de imagens com o objetivo de capturar informações textuais de fogos de documentos de identificação pessoal com projeto híbrido para smartphones com Ionic 3.
 
 ## Debugando a aplicação em um dispositivo com Android
 ```
@@ -12,7 +12,7 @@ $ ionic cordova run android --device -lc
 ```
 $ ionic cordova build android --prod #--release
 ```
-O pacote estará disponível em .
+O pacote estará disponível em platforms/android/app/build/outputs/apk/debug/app-debug.apk.
 
 ## Fontes
 * [Ionic Framework](https://ionicframework.com/docs/)
