@@ -3,7 +3,7 @@
     <name>PoC OCR</name>
     <description>SESDF - PoC OCR</description>
     <author email="allan.c.ramalho@gmail.com" href="https://br.linkedin.com/in/allancramalho">Allan Carlos Ramalho</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://10.0.0.8:8101" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -48,5 +48,6 @@
     <allow-navigation href="http://10.0.0.8:8100" />
     <allow-navigation href="http://10.0.0.8:8102" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <allow-navigation href="http://10.0.0.8:8101" />
     <engine name="android" spec="7.0.0" />
 </widget>

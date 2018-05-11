@@ -18,4 +18,4 @@ O pacote estará disponível em platforms/android/app/build/outputs/apk/debug/ap
 * [Ionic Framework](https://ionicframework.com/docs/)
 * [Ocrad.js](antimatter15.com/ocrad.js/demo.html)
 * [Ionic 2 OCR Example](https://github.com/matiastucci/ionic-ocr-example)
-* [Tesseract.js](tesseract.projectnaptha.com)
+* [Tesseract.js](https://github.com/naptha/tesseract.js)

@@ -44,7 +44,7 @@ export class HomePage {
         },{
           text: 'Demonstração - RG P&B',
           handler: () => {
-            this.srcImage = 'assets/imgs/demo2.png';
+            this.srcImage = 'assets/imgs/demo3.png';
           }
         },{
           text: 'Cancelar',
@@ -70,27 +70,27 @@ export class HomePage {
     });
   }
 
-  // Fonte: https://github.com/allancr/dispenser-poc-ocr
+  // Fonte: https://github.com/matiastucci/ionic-ocr-example
   ocradjs() {
     let loader = this.loadingCtrl.create({
      content: 'Processando imagem com OCRAD JS...'
     });
     loader.present();
-    OCRAD(document.getElementById('image'), text => {
+    (<any>window).OCRAD(document.getElementById('image'), text => {
       loader.dismissAll();
       console.log(text);
       alert(text);
     });
   }
 
-  // Fonte: https://github.com/naptha/tesseract.js#tesseractjs
+  // Fonte: https://github.com/naptha/tesseract.js
   tesseractjs() {
     let loader = this.loadingCtrl.create({
      content: 'Processando imagem com Tesseract JS...'
     });
     loader.present();
 
-    Tesseract.recognize(document.getElementById('image'))
+    (<any>window).Tesseract.recognize(document.getElementById('image'))
 	.then(function(result){
 	    console.log(result)
 	    loader.dismissAll();
