@@ -32,19 +32,59 @@ export class HomePage {
             this.getPicture(1); // 1 == Camera
           }
         },{
-          text: 'Demonstração - Texto Limpo',
+          text: '(demo) Texto Limpo',
           handler: () => {
             this.srcImage = 'assets/imgs/demo1.png';
           }
         },{
-          text: 'Demonstração - RG Cor',
+          text: '(demo) Identidade Cor',
           handler: () => {
             this.srcImage = 'assets/imgs/demo2.png';
           }
         },{
-          text: 'Demonstração - RG P&B',
+          text: '(demo) Identidade P&B',
           handler: () => {
             this.srcImage = 'assets/imgs/demo3.png';
+          }
+        },{
+          text: '(demo) Só RG Cor',
+          handler: () => {
+            this.srcImage = 'assets/imgs/sorg.png';
+          }
+        },{
+          text: '(demo) Só RG P&B',
+          handler: () => {
+            this.srcImage = 'assets/imgs/sorgpb.png';
+          }
+        },{
+          text: '(demo) Só Nome Cor',
+          handler: () => {
+            this.srcImage = 'assets/imgs/sonome.png';
+          }
+        },{
+          text: '(demo) Só Nome P&B',
+          handler: () => {
+            this.srcImage = 'assets/imgs/sonomepb.png';
+          }
+        },{
+          text: '(demo) Só CPF Cor',
+          handler: () => {
+            this.srcImage = 'assets/imgs/socpf.png';
+          }
+        },{
+          text: '(demo) Só CPF P&B',
+          handler: () => {
+            this.srcImage = 'assets/imgs/socpfpb.png';
+          }
+        },{
+          text: '(demo) Só Nascimento Cor',
+          handler: () => {
+            this.srcImage = 'assets/imgs/sonascimento.png';
+          }
+        },{
+          text: '(demo) Só Nascimento P&B Cor',
+          handler: () => {
+            this.srcImage = 'assets/imgs/sonascimentopb.png';
           }
         },{
           text: 'Cancelar',
@@ -78,6 +118,7 @@ export class HomePage {
     loader.present();
     (<any>window).OCRAD(document.getElementById('image'), text => {
       loader.dismissAll();
+      text = `\n\n*** Tentativa de interpretação ***\n${JSON.stringify(this.extrairRg(text))} \n\n${text}`;
       console.log(text);
       alert(text);
     });
@@ -91,12 +132,29 @@ export class HomePage {
     loader.present();
 
     (<any>window).Tesseract.recognize(document.getElementById('image'))
-	.then(function(result){
-	    console.log(result)
-	    loader.dismissAll();
-	    console.log(result);
-	    alert(result.text);
-	});
+  	.then(result => {
+  	    console.log(result)
+  	    loader.dismissAll();
+        result.text = `\n\n*** Tentativa de interpretação ***\n${JSON.stringify(this.extrairRg(result.text))} \n\n${result.text}`;
+  	    console.log(result.text);
+  	    alert(result.text);
+  	});
+  }
+
+  extrairRg(ocr: string) {
+    var rg: any = /([0-9-.]){3}\w+/;
+    var nome: any = /([A-Z']{2,} ){2,}\w+/;
+    var cpf: any = /([0-9-.]){11}\w+/;
+
+    rg = ocr.match(rg);
+    nome = ocr.match(nome);
+    cpf = ocr.match(cpf);
+
+    return {
+      'rg': rg && rg.length > 0 ? rg[0] : '<NÃO ENCONTRADO>',
+      'nome': nome && nome.length > 0 ? nome[0] : '<NÃO ENCONTRADO>',
+      'cpf': cpf && cpf.length > 0 ? cpf[0] : '<NÃO ENCONTRADO>'
+    };
   }
 
   restart() {

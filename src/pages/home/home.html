@@ -12,13 +12,13 @@
 
   <div *ngIf="srcImage" class="image-wrapper">
     <img id="image" [src]="srcImage" />
-    <button ion-button icon-left block (click)="ocradjs()" color="light">
-      <ion-icon name="search"></ion-icon>
-      Processar com OCRAD JS
-    </button>
     <button ion-button icon-left block (click)="tesseractjs()" color="light">
       <ion-icon name="search"></ion-icon>
       Processar com Tesseract JS
+    </button>
+    <button ion-button icon-left block (click)="ocradjs()" color="light">
+      <ion-icon name="search"></ion-icon>
+      Processar com OCRAD JS
     </button>
     <button ion-button icon-left block (click)="restart()" color="light">
       <ion-icon name="refresh"></ion-icon>
