@@ -47,46 +47,6 @@ export class HomePage {
             this.srcImage = 'assets/imgs/demo3.png';
           }
         },{
-          text: '(demo) Só RG Cor',
-          handler: () => {
-            this.srcImage = 'assets/imgs/sorg.png';
-          }
-        },{
-          text: '(demo) Só RG P&B',
-          handler: () => {
-            this.srcImage = 'assets/imgs/sorgpb.png';
-          }
-        },{
-          text: '(demo) Só Nome Cor',
-          handler: () => {
-            this.srcImage = 'assets/imgs/sonome.png';
-          }
-        },{
-          text: '(demo) Só Nome P&B',
-          handler: () => {
-            this.srcImage = 'assets/imgs/sonomepb.png';
-          }
-        },{
-          text: '(demo) Só CPF Cor',
-          handler: () => {
-            this.srcImage = 'assets/imgs/socpf.png';
-          }
-        },{
-          text: '(demo) Só CPF P&B',
-          handler: () => {
-            this.srcImage = 'assets/imgs/socpfpb.png';
-          }
-        },{
-          text: '(demo) Só Nascimento Cor',
-          handler: () => {
-            this.srcImage = 'assets/imgs/sonascimento.png';
-          }
-        },{
-          text: '(demo) Só Nascimento P&B Cor',
-          handler: () => {
-            this.srcImage = 'assets/imgs/sonascimentopb.png';
-          }
-        },{
           text: 'Cancelar',
           role: 'cancel'
         }
